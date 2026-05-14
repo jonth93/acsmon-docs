@@ -2,7 +2,7 @@
 
 This repository mirrors the in-app documentation shipped with ACS Monitor. The source of truth lives inside the application; this copy is auto-exported on every release so it can be browsed without a running install.
 
-Latest releases: <https://acsmon.com/releases> · Product site: <https://acsmon.com>
+Product site: <https://acsmon.com>
 
 ## Sections
 
