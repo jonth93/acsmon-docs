@@ -30,7 +30,7 @@ Conditions: `status_down, status_up, payload_eq, payload_ne, payload_contains, p
 
 - **Cooldown** — Minimum minutes between repeated notifications for the same rule.
 
-- **Escalation** — (SNMP only) Auto-escalate severity after N minutes if not acknowledged.
+- **Escalation** — Auto-escalate severity after N minutes if not acknowledged, optionally notifying a separate set of escalation channels. Available for SNMP and service monitor rules; not supported for webhook rules.
 
 - **Notify on Recovery** — Send a recovery notification to all channels when the condition clears.
 
