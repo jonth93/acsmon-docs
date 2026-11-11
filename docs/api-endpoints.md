@@ -48,16 +48,16 @@ Device Groups
 *Permission:* `devices.view`
 
 - **POST** `/api/v1/device-groups` — Create a device group
-*Permission:* `devices.create`
+*Permission:* `device-groups.create`
 
 - **GET** `/api/v1/device-groups/{id}` — Get a device group
 *Permission:* `devices.view`
 
 - **PUT** `/api/v1/device-groups/{id}` — Update a device group
-*Permission:* `devices.edit`
+*Permission:* `device-groups.edit`
 
 - **DELETE** `/api/v1/device-groups/{id}` — Delete a device group
-*Permission:* `devices.delete`
+*Permission:* `device-groups.delete`
 
 OIDs
 6 endpoints
@@ -85,13 +85,13 @@ Device Webhooks
 
 Webhook CRUD
 
-- **GET** `/api/v1/devices/{device}/webhooks` — List webhooks for a device
-*Permission:* `devices.view`
+- **GET** `/api/v1/devices/{device}/webhooks` — List webhooks for a device, including their ingest tokens
+*Permission:* `devices.view + webhooks.edit`
 
 - **POST** `/api/v1/devices/{device}/webhooks` — Create a webhook on a device
 *Permission:* `devices.create`
 
-- **GET** `/api/v1/devices/{device}/webhooks/{webhook}` — Get webhook details
+- **GET** `/api/v1/devices/{device}/webhooks/{webhook}` — Get webhook details (the ingest token is included only with webhooks.edit)
 *Permission:* `devices.view`
 
 - **PUT** `/api/v1/devices/{device}/webhooks/{webhook}` — Update a webhook
@@ -169,16 +169,16 @@ Monitor Groups
 *Permission:* `monitors.view`
 
 - **POST** `/api/v1/monitor-groups` — Create a monitor group
-*Permission:* `monitors.create`
+*Permission:* `monitor-groups.create`
 
 - **GET** `/api/v1/monitor-groups/{id}` — Get a monitor group
 *Permission:* `monitors.view`
 
 - **PUT** `/api/v1/monitor-groups/{id}` — Update a monitor group
-*Permission:* `monitors.edit`
+*Permission:* `monitor-groups.edit`
 
 - **DELETE** `/api/v1/monitor-groups/{id}` — Delete a monitor group
-*Permission:* `monitors.delete`
+*Permission:* `monitor-groups.delete`
 
 SNMP Alert Rules
 5 endpoints
@@ -301,7 +301,7 @@ Discovery
 *Permission:* `discovery.run`
 
 - **POST** `/api/v1/discovery-results/{id}/import` — Import a discovered device
-*Permission:* `discovery.create`
+*Permission:* `discovery.run`
 
 Dashboards & Widgets
 10 endpoints
@@ -315,25 +315,25 @@ Dashboards & Widgets
 - **GET** `/api/v1/dashboards/{id}` — Get dashboard with widgets
 *Permission:* `dashboards.view`
 
-- **PUT** `/api/v1/dashboards/{id}` — Update dashboard settings
+- **PUT** `/api/v1/dashboards/{id}` — Update dashboard settings (own dashboards; admins any)
 *Permission:* `dashboards.edit`
 
-- **DELETE** `/api/v1/dashboards/{id}` — Delete dashboard and all widgets
+- **DELETE** `/api/v1/dashboards/{id}` — Delete dashboard and all widgets (own dashboards; admins any)
 *Permission:* `dashboards.delete`
 
 - **GET** `/api/v1/dashboards/{id}/widgets` — List widgets on a dashboard
 *Permission:* `dashboards.view`
 
-- **POST** `/api/v1/dashboards/{id}/widgets` — Add a widget to a dashboard
+- **POST** `/api/v1/dashboards/{id}/widgets` — Add a widget to a dashboard (own dashboards; admins any)
 *Permission:* `dashboards.edit`
 
-- **PUT** `/api/v1/widgets/{id}` — Update a widget's config
+- **PUT** `/api/v1/widgets/{id}` — Update a widget's config (own dashboards; admins any)
 *Permission:* `dashboards.edit`
 
-- **DELETE** `/api/v1/widgets/{id}` — Remove a widget
+- **DELETE** `/api/v1/widgets/{id}` — Remove a widget (own dashboards; admins any)
 *Permission:* `dashboards.edit`
 
-- **POST** `/api/v1/widgets/positions` — Batch update widget positions
+- **POST** `/api/v1/widgets/positions` — Batch update widget positions (every widget must be on a dashboard you may edit)
 *Permission:* `dashboards.edit`
 
 Users & Roles
