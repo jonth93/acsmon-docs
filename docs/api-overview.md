@@ -32,7 +32,9 @@ Content-Type: application/json
 
 Authorization: Bearer 1|abc123...
 
-You can also generate API tokens from the web UI under **Profile > API Tokens**. These long-lived tokens don't require the login flow.
+If the account has **two-factor authentication** enabled, the login also needs `"two_factor_code"` (the 6-digit authenticator code) or `"recovery_code"`; without one the response is `401` with `"error": "two_factor_required"`. Other refusals carry `"error"` too: `invalid_credentials`, `invalid_two_factor_code`, `account_disabled`, and `429` `throttled` after 5 failures a minute for one account. Optional `"expires_in_days"` (1&ndash;365) makes the issued token expire; omitted, it does not.
+
+You can also generate API tokens from the web UI under **Profile > API Tokens**. These tokens don't require the login flow; they expire after 90 days unless you choose another lifetime (or "never") when creating one.
 
 ### Rate Limiting
 

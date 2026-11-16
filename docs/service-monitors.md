@@ -12,7 +12,7 @@ Service monitors check the availability and performance of network services at c
 | tcp | — | TCP port open/close check with optional send/expect strings |
 | http | 80 | HTTP check: status code, body regex, redirect following |
 | https | 443 | HTTPS check + SSL certificate validation and expiry tracking |
-| ssh | 22 | SSH banner check with optional auth and command execution |
+| ssh | 22 | SSH banner check with optional auth and command execution. The server's host key is pinned on the first successful check; if it later changes the monitor goes down (possible man-in-the-middle). After a legitimate key change, use "Reset pinned host key" on the monitor's page (or `POST /api/v1/monitors/{id}/reset-host-key`) |
 | smtp | 25/587 | SMTP banner and optional auth check |
 | ftp | 21 | FTP banner check |
 | pop3 | 110 | POP3 banner check |

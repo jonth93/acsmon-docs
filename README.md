@@ -27,6 +27,7 @@ Product site: <https://acsmon.com>
 - [Sounds & Audio Cues](docs/sounds.md)
 - [Backups](docs/backups.md)
 - [System Health](docs/system-health.md)
+- [Ai Agents](docs/ai-agents.md)
 - [API Overview](docs/api-overview.md)
 - [API Endpoints](docs/api-endpoints.md)
 - [Developer Libraries](docs/developer-libraries.md)

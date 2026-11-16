@@ -156,6 +156,9 @@ Service Monitors
 - **POST** `/api/v1/monitors/{id}/check` — Trigger an immediate manual check
 *Permission:* `monitors.edit`
 
+- **POST** `/api/v1/monitors/{id}/reset-host-key` — SSH monitors: forget the pinned host key after the server's key was legitimately replaced; the next successful check pins the new key
+*Permission:* `monitors.edit`
+
 - **GET** `/api/v1/monitors/{id}/results` — Get recent check results
 *Permission:* `monitors.view`
 

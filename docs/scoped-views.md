@@ -14,7 +14,7 @@ When editing a user account under **Administration &rarr; Users**, the **Access 
 | --- | --- |
 | Default Dashboard | Assign a specific dashboard as the user's landing page. When they log in or navigate to the dashboard, this is what they see. |
 | Restrict to Default Dashboard | When enabled, the user can *only* view their assigned dashboard. They cannot browse, create, or edit other dashboards. The dashboard selector in the top bar is hidden. |
-| Allowed Device Groups | Restrict the user to one or more device groups. They will only see devices, alerts, SNMP traps, and search results belonging to those groups. Leave empty for unrestricted access. |
+| Allowed Device Groups | Restrict the user to one or more device groups. They will only see devices, their OIDs and metrics, alerts, SNMP traps, dashboard widget data and search results belonging to those groups — in the web UI, the REST API and the MCP server alike. Devices with no group are hidden from restricted users. Service monitors are not affected. Super-admins are never restricted. Leave empty for unrestricted access. |
 
 ### Setting Up a Customer View
 
