@@ -14,7 +14,7 @@ The MCP server ships **switched off**. An administrator enables it under **Setti
 
 - **IP allowlist** - single addresses or CIDR ranges. An empty list blocks every connection. The list is matched against the TCP peer address: behind a reverse proxy or load balancer that is the proxy's address.
 
-- **API token** - every request carries `Authorization: Bearer `. The agent acts as the token's user, with exactly that user's permissions, narrowed further by the token's abilities. It can never do more than that user could in the web interface. Create a dedicated user per agent with only the permissions it needs.
+- **API token** - every request carries `Authorization: Bearer <token>`. The agent acts as the token's user, with exactly that user's permissions, narrowed further by the token's abilities. It can never do more than that user could in the web interface. Create a dedicated user per agent with only the permissions it needs.
 
 - **Capability switches** - a server-wide ceiling per area (devices, monitors, alert rules, channels, ...) for viewing, creating/editing and deleting. A tool is offered only when its switch is on *and* the user holds the permission. Deleting is off by default; switching it on asks for confirmation.
 
